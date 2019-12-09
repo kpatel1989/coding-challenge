@@ -2,7 +2,7 @@
  * Implement quick sort
  */
 
-quickSort = (arr) => {
+const quickSort = (arr) => {
     if (!arr || arr.length == 0) return arr;
     let start = 0, end = arr.length;
     alignPivot(arr, start, end - 1);
@@ -39,3 +39,5 @@ console.log(quickSort(a));
 
 a = [];
 console.log(quickSort(a));
+
+module.exports = quickSort;
