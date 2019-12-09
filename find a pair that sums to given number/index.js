@@ -5,13 +5,14 @@
  */
 
 findPair = (arr, value) => {
+    let difference = {};
     const length = arr.length;
     for (var i = 0 ; i < length; i++ ) {
-        for (var j = i; j < length; j++) {
-            if (arr[i] + arr[j] === value){
-                return [arr[i], arr[j]];
-            }
+        if (difference[arr[i]]) {
+            return [difference[arr[i]], arr[i]];
         }
+        let diff = Math.abs(value - arr[i]);
+        difference[diff] = arr[i];
     }
     return [];
 }
