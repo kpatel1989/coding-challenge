@@ -22,9 +22,11 @@ you could climb 1, 3, or 5 steps at a time.
      if (steps == 0) return [];
     for(let i = 0; i < stepsAtatime.length; i++) {
         let step = stepsAtatime[i];
-        if (steps - step >= 0) {
+        if (step == steps) {
+            posibilities = posibilities.concat([step]);
+        }
+        else if (steps - step > 0) {
             let ways = climb(steps-step, stepsAtatime).map(ps => [step].concat(ps));
-            if (ways.length == 0) ways = [step];
             posibilities = posibilities.concat(ways);
         }
     };
@@ -33,4 +35,5 @@ you could climb 1, 3, or 5 steps at a time.
 
 console.log(climb(4, [1,2]));
 console.log(climb(4, [1,3,5]));
-console.log(climb(10, [1,3,5]));
+let pos = climb(10, [1,3,5])
+console.log(pos, pos.length);
