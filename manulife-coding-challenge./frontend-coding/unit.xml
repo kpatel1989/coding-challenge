@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.6729999999999998" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-08-24T23:54:33" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="list view test" timestamp="2020-08-24T23:54:33" tests="5" file="/Users/kartik.patel/Documents/kartik/coding-challenge/manulife-coding-challenge./frontend-coding/423f4297-5eb4-447d-b06e-bbf7c21a2a32/test/test.js" failures="0" time="1.6729999999999998">
+    <testcase name="list view test Clicking on Insert button should show alert message &quot;Please provide the valid input&quot; for the invalid or empty input" time="0.202" classname="Clicking on Insert button should show alert message &quot;Please provide the valid input&quot; for the invalid or empty input">
+    </testcase>
+    <testcase name="list view test Clicking on Insert button should add the valid input to the list" time="0.325" classname="Clicking on Insert button should add the valid input to the list">
+    </testcase>
+    <testcase name="list view test After inserting the value successfully should reset the input" time="0.312" classname="After inserting the value successfully should reset the input">
+    </testcase>
+    <testcase name="list view test Font color for every third elements (3, 6 and 9 etc) in the list should be red color" time="0.418" classname="Font color for every third elements (3, 6 and 9 etc) in the list should be red color">
+    </testcase>
+    <testcase name="list view test Font color for other than every third elements (3, 6 and 9 etc) in the list should be black color" time="0.416" classname="Font color for other than every third elements (3, 6 and 9 etc) in the list should be black color">
+    </testcase>
+  </testsuite>
+</testsuites>

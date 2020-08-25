@@ -1,0 +1,16 @@
+ul {
+ float:right;
+ margin-right:60%;
+}
+
+#list {
+ float:right;
+ margin-right:60%;
+}
+
+#list li {
+    color: black;
+}
+#list li:nth-child(3n) {
+    color: red;
+}
