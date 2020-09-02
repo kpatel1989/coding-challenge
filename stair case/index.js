@@ -33,7 +33,59 @@ you could climb 1, 3, or 5 steps at a time.
     return posibilities;
  }
 
+ function stepPerms(steps) {
+    return takeSteps(steps, {});
+}
+
+function takeSteps(steps, possibleWays) {
+    if (steps == 1) {
+        return 1;
+    } else if (steps == 2) {
+        return 2;
+    } else if (steps == 3) {
+        return 1 + takeSteps(steps - 1, possibleWays) + takeSteps(steps - 2, possibleWays);
+    }
+
+    let firstStep = possibleWays[steps - 1] ? possibleWays[steps - 1] : takeSteps(steps - 1, possibleWays);
+    let twoSteps = possibleWays[steps - 2] ? possibleWays[steps - 2] : takeSteps(steps - 2, possibleWays);
+    let threeStep = possibleWays[steps - 3] ? possibleWays[steps - 3] : takeSteps(steps - 3, possibleWays);
+    if (!possibleWays[steps-1]) {
+        possibleWays[steps - 1] = firstStep;
+    }
+    if (!possibleWays[steps - 2]) {
+        possibleWays[steps - 2] = twoSteps;
+    }
+    if (!possibleWays[steps - 3]) {
+        possibleWays[steps - 3] = threeStep;
+    }
+    return firstStep + twoSteps + threeStep;
+}
+
+function findNumberOfWays(stairCases) {
+
+
+    for (let sItr = 0; sItr < stairCases.length; sItr++) {
+        const n = parseInt(stairCases[sItr], 10);
+        const res = stepPerms(n);
+        console.log(res + '\n');
+    }
+}
+
+
 console.log(climb(4, [1,2]));
 console.log(climb(4, [1,3,5]));
 let pos = climb(10, [1,3,5])
 console.log(pos, pos.length);
+
+console.log(stepPerms(4, [1,2]));
+console.log(stepPerms(3, [1,3,5]));
+console.log(stepPerms(10, [1,3,5]));
+
+let ways = [
+    32,
+    33,
+    35,
+    36,
+    36];
+
+console.log(findNumberOfWays(ways));
